@@ -160,6 +160,8 @@ const payer = Keypair.fromSecretKey(secretKey); // 5ipkGqSibqZaX5TnhUhUU8RvkWE7h
       }
     }
   }
+
+  
   
   // failures == 0
   //   ? console.log("all master editions created")
