@@ -93,37 +93,37 @@ const payer = Keypair.fromSecretKey(secretKey); // 5ipkGqSibqZaX5TnhUhUU8RvkWE7h
         );
 
 
-        // if (splitAuthority) {
+        if (splitAuthority) {
 
-        //   let masterEdition = {
-        //       edition: masterKey,
-        //       mint: mint,
-        //       updateAuthority: payer.publicKey,
-        //       mintAuthority: payer.publicKey,
-        //       payer: payer.publicKey,
-        //       metadata: metadatakey,  } as CreateMasterEditionV3InstructionAccounts;
+          let masterEdition = {
+              edition: masterKey,
+              mint: mint,
+              updateAuthority: payer.publicKey,
+              mintAuthority: payer.publicKey,
+              payer: payer.publicKey,
+              metadata: metadatakey,  } as CreateMasterEditionV3InstructionAccounts;
 
-        //   let masterArgs = { maxSupply: 1, } as CreateMasterEditionArgs;
+          let masterArgs = { maxSupply: 1, } as CreateMasterEditionArgs;
 
-        //   let masterEditionInstructionArgs = {createMasterEditionArgs: masterArgs,   } as CreateMasterEditionInstructionArgs;
+          let masterEditionInstructionArgs = {createMasterEditionArgs: masterArgs,   } as CreateMasterEditionInstructionArgs;
 
-        //   let ix = createCreateMasterEditionV3Instruction(
-        //     masterEdition,
-        //     masterEditionInstructionArgs
-        //   );
+          let ix = createCreateMasterEditionV3Instruction(
+            masterEdition,
+            masterEditionInstructionArgs
+          );
 
-        //   const transaction = new Transaction().add(ix);
+          const transaction = new Transaction().add(ix);
 
-        //   console.log("Try");
-        //   await sendAndConfirmTransaction(connection, transaction, [
-        //     wallet,
-        //     updateKeypair!,
-        //     mintKeypair!,
-        //   ]);
-        //   console.log("Success");
+          console.log("Try");
+          await sendAndConfirmTransaction(connection, transaction, [
+            wallet,
+            updateKeypair!,
+            mintKeypair!,
+          ]);
+          console.log("Success") ;
 
 
-        // } else {
+         } else {
           let masterEdition = {
             edition: masterKey,
             mint: mint,
@@ -144,7 +144,7 @@ const payer = Keypair.fromSecretKey(secretKey); // 5ipkGqSibqZaX5TnhUhUU8RvkWE7h
           );
           const transaction = new Transaction().add(ix);
           await sendAndConfirmTransaction(connection, transaction, [wallet]);
-      //  }
+        }
 
         config[hash] = true;
         successes++;
