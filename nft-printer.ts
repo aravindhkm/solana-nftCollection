@@ -173,3 +173,4 @@ const payer = Keypair.fromSecretKey(secretKey); // 5ipkGqSibqZaX5TnhUhUU8RvkWE7h
 })();
 
 // if (require.main) main(process.argv.slice(2)).catch(console.error);
+// ed1d0d396d73157cde8ad29b3f8ffd88cb51e4410582f37c5bbfe5a40955c65e
